@@ -14,6 +14,10 @@ module ApplicationHelper
 
     if url.hostname == "www.cnn.com"
       host = 'div .zn-body__paragraph'
+    elsif url.hostname == "www.nytimes.com"
+      host = '.story-body-text'
+    elsif url.hostname == "www.foxnews.com"
+      host = 'p'
     end
 
     content = []
