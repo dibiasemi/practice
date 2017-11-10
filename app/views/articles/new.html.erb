@@ -1,0 +1,28 @@
+<h3> Articles in "<%= @skroll.name %>" Skroll </h3>
+
+<% if !@skroll.articles.empty? %>
+  <div>
+    <% @skroll.articles.each do |article| %>
+      <p> article.title </p>
+    <% end %>
+  </div>
+<% else %>
+  <p>There are currently no articles in this skroll</p>
+<% end %>
+
+<h4><%= link_to "Play Skroll", skroll_path(@skroll) %></h4>
+
+
+<h4>Add New Article</h4>
+<p>Copy/Paste Article URL below</p>
+
+  <%= form_for([@skroll, @article], url: new_skroll_article_path(@skroll)) do |f| %>
+    <p>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    </p>
+    <p>
+    <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+

@@ -1,0 +1,12 @@
+<h4>Skrolls</h4>
+<% if !@skrolls.empty? %>
+<div>
+  <% @skrolls.each do |skroll| %>
+    <p><%= link_to skroll.name, skroll %></p>
+  <% end %>
+</div>
+<% else %>
+  <p>There are currently no skrolls</p>
+  <p><%= link_to "Add Skroll", new_skroll_path %></p>
+<% end %>
+

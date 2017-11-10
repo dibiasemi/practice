@@ -1,0 +1,13 @@
+<h4> Articles in "<%= @skroll.name %>" Skroll </h4>
+
+<% if !@articles.empty? %>
+  <div>
+    <% @articles.each do |article| %>
+      <p> <%= title(article.url) %> </p>
+      <p> <%= content(article.url) %> </p>
+    <% end %>
+  </div>
+<% else %>
+  <p>There are currently no articles in this skroll.</p>
+  <p><%= link_to "Add Article", new_skroll_article_path(@skroll)  %></p>
+<% end %>

@@ -1,0 +1,14 @@
+<h3>Create New Skroll</h3>
+
+  <%= form_for(@skroll) do |f| %>
+    <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </p>
+    <p>
+    <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+
+
+<h4><%= link_to "View all Skrolls", skrolls_path %></h4>
