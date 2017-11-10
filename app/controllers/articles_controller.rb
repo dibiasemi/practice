@@ -9,11 +9,14 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    puts "LKJDFLKJFLKDSJLKDJFLKDSJFLKSDJFLKj"
+    p params
     @skroll = Skroll.find(params[:skroll_id])
 
-    @article = @skroll.article.new(skroll_id: @skroll.id, url: params[:url])
-    if @rating.save
-      redirect_to articles_path(@skroll)
+    @article = Article.new(skroll: @skroll, url: params[:article][:url])
+    if @article.save
+      p @article
+      redirect_to new_skroll_article_path(@skroll)
     else
       render 'new'
     end
