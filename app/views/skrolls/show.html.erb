@@ -1,27 +1,32 @@
-<div class="navbar">
-  <p><%= link_to 'Exit Scroll', new_skroll_article_path(@skroll) %></p>
-</div>
-
-<h4> Articles in "<%= @skroll.name %>" Skroll </h4>
-
-<% if !@articles.empty? %>
-  <div>
-    <% @articles.each do |article| %>
-      <p><em><b><%= title(article.url) %></b></em></p>
-      <section class="article">
-        <% content(article.url).each do |wolf| %>
-        <p><%= wolf %></p>
-        <% end %>
-      </section>
-      <p>*******************************************************</p>
-    <% end %>
+<div class="speed-control">
+  <div class="navbar">
+      <p class="slow"><< Slower 🐢</p>
+      <p class="pause">Pause</p>
+      <p class="fast">🐇 Faster >></p>
   </div>
-<% else %>
-  <p>There are currently no articles in this skroll.</p>
-  <p><%= link_to "Add Article", new_skroll_article_path(@skroll)  %></p>
-<% end %>
+</div>
+<div class="article-scroll">
 
-<div class="footer">
-  <p>I need to change speed</p>
+  <h4> Articles in "<%= @skroll.name %>" Skroll </h4>
+
+  <% if !@articles.empty? %>
+    <div>
+      <% @articles.each do |article| %>
+        <p><em><b><%= title(article.url) %></b></em></p>
+        <section class="article">
+          <% content(article.url).each do |wolf| %>
+          <p><%= wolf %></p>
+          <% end %>
+        </section>
+        <p>*******************************************************</p>
+      <% end %>
+    </div>
+  <% else %>
+    <p>There are currently no articles in this skroll.</p>
+    <p><%= link_to "Add Article", new_skroll_article_path(@skroll)  %></p>
+  <% end %>
 </div>
 
+ <div class="footer">
+      <p><%= link_to 'Exit Scroll', new_skroll_article_path(@skroll) %></p>
+</div>

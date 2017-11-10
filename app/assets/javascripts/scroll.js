@@ -3,9 +3,9 @@ var currentpos = 0,
         curpos1 = 0,
         curpos2 = -1
 
-    function initialize() {
-        startit()
-    }
+    // function initialize() {
+    //     startit()
+    // }
 
     function scrollwindow() {
         if (document.all)
@@ -32,10 +32,37 @@ var currentpos = 0,
         }
     }
 
+    var speed = 100;
+    $(document).ready(function() {
+          var karl = setInterval("scrollwindow()", speed)
+        $('.slow').on('click', function(){
 
+          console.log(speed)
+          speed = speed + 10
+          console.log(speed)
+          clearInterval(karl)
+          karl = setInterval("scrollwindow()", speed)
+        })
 
-    function startit(speed = 100) {
-        setInterval("scrollwindow()", speed)
-    }
+          $('.fast').on('click', function(){
+          console.log(speed)
+          speed = speed - 10
+          console.log(speed)
+          clearInterval(karl)
+          karl = setInterval("scrollwindow()", speed)
+        })
 
-    window.onload = initialize
+        //   $('.pause').on('click', function(){
+        //   console.log(speed)
+        //   speed = 5000
+        //   console.log(speed)
+        //   clearInterval(karl)
+        //   karl = setInterval("scrollwindow()", speed)
+        // })
+    });
+
+    // function startit(speed = -10) {
+    //   setInterval("scrollwindow()", speed)
+    // }
+
+    // window.onload = initialize
