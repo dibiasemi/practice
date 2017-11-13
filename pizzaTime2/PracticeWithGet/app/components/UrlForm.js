@@ -9,7 +9,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 
-export default class RegForm extends React.Component {
+export default class UrlForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,7 +25,7 @@ export default class RegForm extends React.Component {
 
   render() {
     return (
-      <View style={styles.regform}>
+      <View style={styles.urlform}>
         <Text style={styles.header}>Copy & Paste Article URL</Text>
 
         <TextInput style={styles.textinput} placeholder="Article URL" onChangeText={ (url) => this.setState({url}) } />
@@ -63,7 +63,7 @@ export default class RegForm extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  regform: {
+  urlform: {
     alignSelf: 'stretch',
     borderBottomColor: '#199187',
     borderBottomWidth: 1,

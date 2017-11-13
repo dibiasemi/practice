@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import UrlForm from './app/components/UrlForm';
+import AutoScrollView from './app/components/AutoScrollView'
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <UrlForm/>
+        <AutoScrollView/>
       </View>
     );
   }
@@ -16,9 +16,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#36485f',
-    paddingLeft: 60,
-    paddingRight: 60,
   },
 });

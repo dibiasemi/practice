@@ -24,18 +24,18 @@ export default class Login extends Component<{}> {
       url: ''
     }
   }
-// check if the user has already logged in previously.
-  componentDidMount() {
-    this._loadInitialState().done;
-  }
+// // check if the user has already logged in previously.
+//   componentDidMount() {
+//     this._loadInitialState().done;
+//   }
 
-// adding username to async storage
-  _loadInitialState = async () => {
-    var value = await AsyncStorage.getItem('user');
-    if (value !== null) {
-      this.props.navigation.navigate('Profile');
-    }
-  }
+// // adding username to async storage
+//   _loadInitialState = async () => {
+//     var value = await AsyncStorage.getItem('user');
+//     if (value !== null) {
+//       this.props.navigation.navigate('Profile');
+//     }
+//   }
 
   render() {
     return (
@@ -80,7 +80,7 @@ export default class Login extends Component<{}> {
 
       .then((response) => response.json())
       .then((responseData) => {
-        console.log(responseData);
+        alert('Sucessfully added Article');
       })
       .done();
   }
