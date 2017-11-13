@@ -26,4 +26,3 @@ class SkrollsController < ApplicationController
     params.require(:skroll).permit(:name)
   end
 end
-
